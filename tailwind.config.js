@@ -11,6 +11,7 @@ export default {
         flame: "#ff7644", // accent orange
       },
       fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
         mono: ['"Iosevka Charon Mono"', "ui-monospace", "monospace"],
         display: ['"Bebas Neue"', "sans-serif"],
         serif: ['"Instrument Serif"', "serif"],

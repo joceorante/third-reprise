@@ -1,12 +1,21 @@
 import { tourStops } from "../data/tour";
+import lockup from "../assets/cover-theory-lockup.png";
+import colors from "../assets/cover-theory-colors.png";
 
 export default function CoverTheory() {
   return (
-    <section id="tour" className="w-full bg-cream py-20 text-black">
+    <section id="tour" className="w-full overflow-hidden bg-cream pb-20 pt-16 text-black">
+      {/* "COVER THEORY — NORTHEAST TOUR" lockup */}
+      <h2 className="mx-auto mb-10 max-w-[1441px] px-8 md:px-[114px]">
+        <img
+          src={lockup}
+          alt="Cover Theory — Northeast Tour"
+          className="mx-auto w-full max-w-[1180px]"
+        />
+      </h2>
+      {/* Full-bleed color ribbon between the heading and the tour list */}
+      <img src={colors} alt="" aria-hidden className="mb-10 w-full" />
       <div className="mx-auto max-w-[1441px] px-8 md:px-[114px]">
-        <h2 className="mb-14 text-center font-display text-[15vw] leading-[0.78] tracking-tight md:text-[185px]">
-          Cover Theory
-        </h2>
 
         <ul>
           {tourStops.map((stop, i) => (

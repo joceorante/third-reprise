@@ -1,23 +1,42 @@
+import { useEffect } from "react";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import CoverTheory from "./components/CoverTheory";
-import Videos from "./components/Videos";
-import Music from "./components/Music";
-import Merch from "./components/Merch";
-import Contact from "./components/Contact";
+import Home from "./pages/Home";
+import About from "./pages/About";
+
+/**
+ * Scrolls to the element named by the URL hash after route changes (so nav
+ * links like "/#tour" work from any page), or back to the top on a plain
+ * route change.
+ */
+function ScrollToHash() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      // Wait a frame so the target page has rendered.
+      requestAnimationFrame(() => {
+        document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
+      });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-ink font-mono text-white">
-      <Navbar />
-      <main>
-        <Hero />
-        <CoverTheory />
-        <Videos />
-        <Music />
-        <Merch />
-        <Contact />
-      </main>
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen bg-ink font-mono text-white">
+        <ScrollToHash />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
