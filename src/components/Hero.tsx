@@ -34,7 +34,7 @@ export default function Hero() {
         <Wordmark className="mb-8" />
         <a
           href="#signup"
-          className="inline-flex w-fit items-center justify-center rounded-full bg-white px-[30px] py-5 font-mono text-lg font-bold uppercase capitalize text-black transition-transform hover:scale-[1.03]"
+          className="inline-flex w-fit items-center justify-center rounded-full bg-white px-[30px] py-5 font-mono text-lg font-bold uppercase text-black transition-transform hover:scale-[1.03]"
         >
           Sign Up For Updates
         </a>

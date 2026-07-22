@@ -24,7 +24,7 @@ export default function CoverTheory() {
               </span>
               <a
                 href={stop.ticketUrl}
-                className="inline-flex items-center justify-center rounded-full bg-ink px-[30px] py-4 font-mono text-sm font-bold uppercase capitalize text-white transition-transform hover:scale-[1.04] md:text-lg"
+                className="inline-flex items-center justify-center rounded-full bg-ink px-[30px] py-4 font-mono text-sm font-bold uppercase text-white transition-transform hover:scale-[1.04] md:text-lg"
               >
                 Get Tickets
               </a>

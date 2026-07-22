@@ -9,7 +9,7 @@ import Contact from "./components/Contact";
 export default function App() {
   return (
     <div className="min-h-screen bg-ink font-mono text-white">
-      <Navbar active="Videos" />
+      <Navbar />
       <main>
         <Hero />
         <CoverTheory />
