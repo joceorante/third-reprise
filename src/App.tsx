@@ -1,5 +1,15 @@
 import { useEffect } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  HashRouter,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
+
+// Static-host preview builds (no server-side SPA fallback) set
+// VITE_HASH_ROUTER=1 to route via the URL fragment instead of pathname.
+const Router = import.meta.env.VITE_HASH_ROUTER ? HashRouter : BrowserRouter;
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -28,7 +38,7 @@ function ScrollToHash() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <div className="min-h-screen bg-ink font-mono text-white">
         <ScrollToHash />
         <Navbar />
@@ -37,6 +47,6 @@ export default function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
